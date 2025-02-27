@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import {CompanyInfoModule} from "./modules/CompanyInfoModule";
 
+// Страница о компании
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    // Возвращаем JSX элемент, который содержит структуру страницы информации о компании
+    return (
+        <div className="App">
+            <h1>Company Info</h1>
+            <CompanyInfoModule>
+                <p>Дополнительная информация о компании</p>
+            </CompanyInfoModule>
+        </div>
+    );
 }
 
+// Экспортируем страницу о компании
 export default App;
