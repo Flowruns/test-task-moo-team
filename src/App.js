@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import {CompanyInfoModule} from "./modules/CompanyInfoModule";
+import {Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
+import CompanyPage from "./pages/CompanyPage";
+import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/ProfilePage";
 
-// Страница о компании
+
+// Настройка основных маршрутов
 function App() {
 
-    // Возвращаем JSX элемент, который содержит структуру страницы информации о компании
+    // Возвращаем JSX элемент, который содержит структуру приложения
     return (
-        <div className="App">
-            <h1>Company Info</h1>
-            <CompanyInfoModule>
-                <p>Дополнительная информация о компании</p>
-            </CompanyInfoModule>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Navigate to="/info" />} />
+                <Route path="/info" element={<CompanyPage/>} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
-// Экспортируем страницу о компании
+// Экспортируем компонент App
 export default App;

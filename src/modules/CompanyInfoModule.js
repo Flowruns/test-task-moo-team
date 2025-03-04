@@ -1,61 +1,95 @@
 ﻿import React, { useEffect, useState } from 'react';
-import CompanyInfo from "../components/CompanyInfo"; // Импортируем новый компонент
+import CompanyInfo from "../components/CompanyInfo";
+import { Box } from "@mui/material";
+import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded';
+import LoginForm from "../components/LoginForm";
 
 
 /**
- * Модуль главного экрана с информацией о компании
- * @param children - дочерние элементы
- * @returns {Element} - возвращаем компонент главного экрана
+ * Модуль для информации о компании
+ * @returns {Element} - возвращаем модуль главного экрана
  */
-export const CompanyInfoModule = ({ children }) => {
+const CompanyInfoModule = () => {
 
-    // Состояние для информации о компании
+    // Состояние информации о компании
     const [info, setInfo] = useState('');
 
-    // Состояние для ошибки запроса
+    // Состояние для хранения ошибки
     const [error, setError] = useState(null);
 
-    /**
-     * Функция получения информации о компании
-     */
+    // Состояние для определения режима входа
+    const [isLoginMode, setIsLoginMode] = useState(false);
+
+    // Функция получения информации о компании
     const fetchInfo = async () => {
 
-        // Отправляем запрос для получения информации
+        // Выполняем HTTP-запрос к сервису получения информации о компании
         const response = await fetch('/api/info.json');
 
-        // Если ответ не успешный
+        // Проверяем, успешен ли ответ. Если нет, выбрасываем ошибку
         if (!response.ok) {
-
-            // Генерируем текст ошибки
             throw new Error('Ошибка при получении данных');
         }
 
-        // Преобразуем полученные данные в JSON формат
-        // Ожидаем, пока данные будут преобразованы из текста в объект JSON
+        // Парсим ответ в формате JSON
         const data = await response.json();
 
-        // Возвращаем конкретное поле 'info' из полученного объекта данных
+        // Возвращаем объект информации о компании
         return data.data.info;
     };
 
-    // Загружаем информацию о компании при монтировании компонента
+    // Хук useEffect для загрузки информации о компании,
+    // срабатывающий при монтировании компонента
     useEffect(() => {
+
+        // Асинхронная функция для загрузки информации
         const loadInfo = async () => {
             try {
+
+                // Получаем информацию о компании
                 const infoData = await fetchInfo();
+
+                // Обновляем состояние с полученной информацией
                 setInfo(infoData);
             } catch (err) {
+
+                // В случае ошибок обновляем состояние с ошибкой
                 setError(err.message);
             }
         };
+
+        // Вызываем функцию загрузки информации
         loadInfo();
+
+        // Возврат для очистки состояния при размонтировании компонента
+        return () => {
+
+            // Очистка состояния информации
+            setInfo('');
+
+            // Очистка сообщения об ошибке при размонтировании
+            setError(null);
+        };
     }, []);
 
-    // Если получаем ошибку - отображаем её
+    // Если получаем ошибку - отображаем её пользователю
     if (error) {
         return <div className="error">{error}</div>;
     }
 
     // Возвращаем JSX элемент, который содержит структуру модуля информации о компании
-    return <CompanyInfo text={info}>{children}</CompanyInfo>;
+    return (
+        <>
+            <Box sx={{ display: "flex", justifyContent: 'center', alignItems: 'center' }}>
+                {isLoginMode ? <LoginForm /> : (
+                    <CompanyInfo text={info}>
+                        <DiamondRoundedIcon sx={{ fontSize: 60, opacity: 0.5, mx: 2, my: 2 }} />
+                    </CompanyInfo>
+                )}
+            </Box>
+        </>
+    );
 };
+
+// Экспортируем модуль CompanyInfoModule
+export default CompanyInfoModule;
