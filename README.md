@@ -6,7 +6,7 @@
     - [Requirements](#requirements)
     - [Installing dependencies](#installing-dependencies)
     - [Build creation](#build-creation)
-- [Architecture](#architectureа)
+- [Architecture](#architecture)
     - [public](#public)
     - [components](#components)
     - [modules](#modules)
