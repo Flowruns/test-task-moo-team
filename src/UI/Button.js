@@ -1,5 +1,5 @@
-﻿import React from 'react';
-import { Button as MuiButton, useTheme } from "@mui/material";
+import React from 'react';
+import { Button as MuiButton } from "@mui/material";
 
 
 /**
@@ -12,7 +12,7 @@ import { Button as MuiButton, useTheme } from "@mui/material";
  */
 const Button = ({ text, onClick, filled = false }) => {
 
-
+    // Вариант кнопки
     const buttonVariant = filled ? "contained" : "outlined";
 
     // Возвращаем JSX элемент, который содержит структуру кнопки
@@ -22,13 +22,14 @@ const Button = ({ text, onClick, filled = false }) => {
             type="submit"
             onClick={onClick}
             sx={{
+                width: 'fit-content',
                 border: filled ? 'none' : `1px solid #5EDBB0`,
                 justifyContent: 'center',
                 fontWeight: 'medium',
                 fontSize: { xs: 12, md: 16, lg: 18 },
                 paddingX: 2,
-                m: 1,
                 color: 'white',
+                m: 1,
                 backgroundColor: filled ? '#5EDBB0' :'transparent',
                 minHeight: 40,
                 borderRadius: 2,

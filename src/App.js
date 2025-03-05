@@ -1,12 +1,8 @@
-import React from 'react';
-import './App.css';
-import {Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import CompanyPage from "./pages/CompanyPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 
-
-// Настройка основных маршрутов
 function App() {
 
     // Возвращаем JSX элемент, который содержит структуру приложения

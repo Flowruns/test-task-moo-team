@@ -1,16 +1,23 @@
-﻿import LayoutPage from "./LayoutPage";
+import LayoutPage from "./LayoutPage";
 import ProfileModule from "../modules/ProfileModule";
 
 
 /**
  * Страница профиля пользователя
- * @returns {Element} - возвращаем JSX элемент, представляющий страницу профиля пользователя
+ * @returns {JSX.Element} - возвращаем JSX элемент, представляющий страницу профиля пользователя
  */
 const ProfilePage = () => {
 
+    // Функция обновления страницы
+    const handleProfileClick = () => {
+
+        // Обновляем страницу
+        window.location.reload();
+    };
+
     // Возвращаем JSX элемент, который содержит структуру страницу профиля пользователя
     return (
-        <LayoutPage>
+        <LayoutPage onProfileClick={handleProfileClick}>
             <ProfileModule />
         </LayoutPage>
     );

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Box, TextField } from "@mui/material";
 import Button from "../UI/Button";
 
@@ -17,13 +17,22 @@ const LoginForm = ({ email, setEmail, password, setPassword, handleLogin, error 
 
     // Возвращаем JSX элемент, который содержит структуру формы для ввода логина и пароля
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, m: 3 }}>
             <TextField
                 label="Email"
                 variant="outlined"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
+                slotProps={{
+                    input: {
+                        sx: { color: 'white' },
+                    },
+                    inputLabel: {
+                        style: { color: 'white' },
+                    },
+                }}
                 sx={{
+                    width: '50%',
                     '& .MuiInputBase-input': {
                         color: 'white',
                     },
@@ -46,7 +55,16 @@ const LoginForm = ({ email, setEmail, password, setPassword, handleLogin, error 
                 type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
+                slotProps={{
+                    input: {
+                        sx: { color: 'white' },
+                    },
+                    inputLabel: {
+                        style: { color: 'white' },
+                    },
+                }}
                 sx={{
+                    width: '50%',
                     '& .MuiInputBase-input': {
                         color: 'white',
                     },
@@ -63,8 +81,11 @@ const LoginForm = ({ email, setEmail, password, setPassword, handleLogin, error 
                     }
                 }}
             />
-            <Button text={'Submit'} onClick={handleLogin} filled={true} />
-            {error && <div className="error">{error}</div>}
+            <Box sx={{m: -1}}>
+                <Button text={'Submit'} onClick={handleLogin} filled={true} />
+                {error && <div className="error">{error}</div>}
+            </Box>
+
         </Box>
     );
 };

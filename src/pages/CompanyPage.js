@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import LayoutPage from "./LayoutPage";
 import CompanyInfoModule from "../modules/CompanyInfoModule";
 

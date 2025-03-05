@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CompanyInfo from "../components/CompanyInfo";
 import { Box } from "@mui/material";
 import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded';
@@ -18,7 +18,7 @@ const CompanyInfoModule = () => {
     const [error, setError] = useState(null);
 
     // Состояние для определения режима входа
-    const [isLoginMode, setIsLoginMode] = useState(false);
+    const [isLoginMode] = useState(false);
 
     // Функция получения информации о компании
     const fetchInfo = async () => {

@@ -1,4 +1,4 @@
-﻿import axios from "axios";
+import axios from "axios";
 
 /**
  * Функция с фейковым запросом на сервер для отправки данных логина и пароля

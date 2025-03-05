@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import LoginFormModule from "../modules/LoginFormModule";
 import LayoutPage from "./LayoutPage";
 
