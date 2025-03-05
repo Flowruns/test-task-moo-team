@@ -52,8 +52,8 @@ It is organized as follows:
 - **UI**: basic components related to the user interface and its management
   <a name="assets"></a>
 ### public
-В этой папке хранятся изображения и медиафайлы, которые используются в разных частях приложения.
-Разбиваем по папкам с названиями в соответствии с модулями, в которых их используем.
+This folder contains images and media files that are used in different parts of the application.
+We divide them into folders with names according to the modules in which we use them.
 <a name="components"></a>
 ### components
 It contains stylized application components used more than once, which contain only the display logic. All components are independent of the higher-level modules and of each other.
