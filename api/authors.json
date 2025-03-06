@@ -1,0 +1,23 @@
+﻿{
+  "success": true,
+  "data": {
+    "authors": [
+      {
+        "authorId": 1,
+        "name": "Charlie Chaplin"
+      },
+      {
+        "authorId": 2,
+        "name": "Walt Disney"
+      },
+      {
+        "authorId": 3,
+        "name": "Mark Twain"
+      },
+      {
+        "authorId": 4,
+        "name": "Albert Einstein"
+      }
+    ]
+  }
+}
