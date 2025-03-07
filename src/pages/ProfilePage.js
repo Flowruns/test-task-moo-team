@@ -8,11 +8,13 @@ import ProfileModule from "../modules/ProfileModule";
  */
 const ProfilePage = () => {
 
-    // Функция обновления страницы
+    /**
+     * Функция обновления страницы
+     */
     const handleProfileClick = () => {
 
-        // Обновляем страницу
-        window.location.reload();
+        // Перенаправляем пользователя на нужный маршрут
+        window.location.href = '/profile';
     };
 
     // Возвращаем JSX элемент, который содержит структуру страницу профиля пользователя
