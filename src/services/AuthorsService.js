@@ -16,7 +16,7 @@ export const fetchAuthors = async () => {
     try {
 
         // Запрос к локальному JSON файлу для получения списка авторов
-        const response = await axios.get(`${process.env.PUBLIC_URL}/api/authors.json`);
+        const response = await axios.get('public/api/authors.json');
 
         // Если запрос успешно выполнен
         if (response.status === 200) {
