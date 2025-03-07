@@ -14,7 +14,7 @@ export const loginUser = async (email, password) => {
     if (email === "aleksei@example.com" && password === "lkJlkn8hj") {
 
         // Запрос к локальному JSON файлу
-        const response = await axios.get('/api/login.json');
+        const response = await axios.get(`${process.env.PUBLIC_URL}/api/login.json`);
 
         // Возвращаем данные запроса, которые содержат токен
         return response.data;

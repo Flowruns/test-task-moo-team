@@ -24,7 +24,7 @@ const CompanyInfoModule = () => {
     const fetchInfo = async () => {
 
         // Выполняем HTTP-запрос к сервису получения информации о компании
-        const response = await fetch('/api/info.json');
+        const response = await fetch(`${process.env.PUBLIC_URL}/api/info.json`);
 
         // Проверяем, успешен ли ответ. Если нет, выбрасываем ошибку
         if (!response.ok) {

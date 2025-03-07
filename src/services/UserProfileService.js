@@ -18,7 +18,7 @@ export const fetchUserProfile = async () => {
     try {
 
         // Запрос к локальному JSON файлу
-        const response = await axios.get('/api/profile.json');
+        const response = await axios.get(`${process.env.PUBLIC_URL}/api/profile.json`);
 
         // Если запрос успешно выполнен
         if (response.data.success) {

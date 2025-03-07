@@ -7,10 +7,10 @@ function App() {
 
     // Возвращаем JSX элемент, который содержит структуру приложения
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/test-task-owlApp">
             <Routes>
                 <Route path="/" element={<Navigate to="/info" />} />
-                <Route path="/info" element={<CompanyPage/>} />
+                <Route path="/info" element={<CompanyPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
             </Routes>

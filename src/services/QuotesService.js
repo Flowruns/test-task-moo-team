@@ -15,7 +15,7 @@ export const fetchQuotes = async () => {
 
     try {
         // Запрос к локальному JSON файлу для получения цитат
-        const response = await axios.get('/api/quotes.json');
+        const response = await axios.get(`${process.env.PUBLIC_URL}/api/quotes.json`);
 
         // Если запрос успешно выполнен
         if (response.status === 200) {
