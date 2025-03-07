@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/test-task-owlApp/static/css/main.ebb0abfd.css",
-    "main.js": "/test-task-owlApp/static/js/main.832a0339.js",
+    "main.js": "/test-task-owlApp/static/js/main.995fdd17.js",
     "static/media/owlAvatar.png": "/test-task-owlApp/static/media/owlAvatar.a86dcea9a9cff93c4332.png",
     "static/media/endlessConstellation.svg": "/test-task-owlApp/static/media/endlessConstellation.f55176d1f70fcbed98fefb5727f11c00.svg",
     "index.html": "/test-task-owlApp/index.html",
     "main.ebb0abfd.css.map": "/test-task-owlApp/static/css/main.ebb0abfd.css.map",
-    "main.832a0339.js.map": "/test-task-owlApp/static/js/main.832a0339.js.map"
+    "main.995fdd17.js.map": "/test-task-owlApp/static/js/main.995fdd17.js.map"
   },
   "entrypoints": [
     "static/css/main.ebb0abfd.css",
-    "static/js/main.832a0339.js"
+    "static/js/main.995fdd17.js"
   ]
 }
